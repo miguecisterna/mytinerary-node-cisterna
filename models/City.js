@@ -16,5 +16,6 @@ let schema = new Schema({
 
 //estoy parado en el modelo City 
 
-let City = model(collection, schema)
+let City = model(collection, schema);
+
 export default City;
