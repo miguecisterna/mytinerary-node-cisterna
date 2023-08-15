@@ -1,4 +1,4 @@
-import User from "../../models/user.js";
+import User from "../../models/User.js";
 
 export default async(req, res) => {
   //req: es el objeto donde el cliente me manda muchos datos importantes acerca de la petición
@@ -12,7 +12,7 @@ export default async(req, res) => {
     let newUser = await User.create(req.body);
     return res.status(201).json({
       succes : true,
-      message: 'User created 🎃🎃',
+      message: 'User created 🎃',
       response: newUser._id
     })
   } catch (error) {

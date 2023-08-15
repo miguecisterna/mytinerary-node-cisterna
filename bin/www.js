@@ -16,7 +16,7 @@ let server = http.createServer(app);    //---> Creo un servidor normalizado con 
 
 let ready = ()=> {
   console.log('Serving on port ' + port + ' ...');
-  connect('mongodb+srv://miguecisterna:dalelobo@cluster0.m9z6ptz.mongodb.net/')
+  connect(process.env.LINK_DB)
   .then(() => console.log('db conected'))
   .catch(err=>console.log(err));
 }
