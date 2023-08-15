@@ -18,7 +18,7 @@ export default async(req, res) => {
   } catch (error) {
     return res.status(400).json({
       succes: false,
-      message: "User couldn't be created",
+      message: "User couldn't be created 😥",
       response: null
     })
   }
