@@ -19,6 +19,7 @@ import logger from 'morgan'                         //-------------->  Para regi
 import indexRouter from './routes/index.js'         //-------------->  Este enrutador va allamar a todos los otros recursos (cities, itineraries, etc).
 import errorHandler from './middlewares/errorHandler.js';
 import notFoundHandler from './middlewares/notFoundHandler.js';
+import cors from 'cors';
 
 
 let app = express();                                //-------------->  Ejecutando el modulo de express CREO UNA APP DE BACKEND (servidor).
@@ -36,6 +37,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));                                        //----> Obligo al servidor a registrar una petición con el modulo logger.
 app.use(express.json());                                       //----> Obligo al servidor a manipular/leer json.
 app.use(express.urlencoded({ extended: false }));              //----> Obligo al servidor a leer params/queries.
+app.use(cors());                                               //----> Obligo al servidor a desbloquear la politica de origenes cruzados
 // app.use(cookieParser());                                    //----> ||Comentado porque no estamos usando el modulo.||
 app.use(express.static(path.join(__dirname, 'public')));       //----> Onligo al servidor a acceder a los archivos estáticos de la carpeta public
 
