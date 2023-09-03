@@ -5,9 +5,11 @@ let schema = new Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
   duration: { type: Number, required: true },
-  Tags: { type: [String], required: true },
+  tags: [{ type: String, required: true }],
   photo: { type: String, required: true },
-  city_id: { type: Types.ObjectId, required: true, ref: 'cities' }
+  city_id: { type: Types.ObjectId, required: true, ref: 'cities' },
+  username: { type: String, required: true},
+  userphoto: { type: String, required: true}
 });
 
 let Itinerary = model(collection, schema);
